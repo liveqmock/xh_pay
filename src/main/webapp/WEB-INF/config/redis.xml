@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- 新华支付平台 Redis -->
+	<bean id="pJedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+	    <property name="maxActive"  value="200" /> 
+	    <property name="maxIdle" value="10" /> 
+	    <property name="maxWait" value="1000" /> 
+	    <property name="testOnBorrow"  value="false"/> 
+	</bean>
+	<bean id="pShardedJedisPool" class="redis.clients.jedis.JedisPool"> 
+	    <constructor-arg index="0" ref="pJedisPoolConfig" /> 
+	    <constructor-arg index="1" value="192.168.75.137" />
+	    <constructor-arg index="2" value="6383" />
+	    <constructor-arg index="3" value="50000" /> 
+	    <constructor-arg index="4" value="redistest" /> 
+	</bean>
+	<bean id="pJedisUtil" class="com.xinhuanet.pay.cache.redis.JedisUtil">
+		<property name="pool"  ref="pShardedJedisPool" />
+	</bean>
+</beans>

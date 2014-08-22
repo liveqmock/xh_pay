@@ -1,0 +1,572 @@
+@charset "utf-8";
+body,div,table,ul,li,ol,dd,dl,p,h1,h2,input,button{
+	padding:0;margin:0;
+	}
+a{cursor:pointer;}
+.headerbox{
+	height:30px;
+	background:#faf9f9;
+	width:100%;
+	border-bottom:#dce1e5 2px solid;
+	}
+.header{
+	width:1000px;
+	height:100%;
+	margin:0 auto;
+	}
+.header ul{
+	list-style:none;
+	float:right;
+	} 
+.header ul li{
+	float:left;
+	font-family:"宋体";
+	font-size:12px;
+	line-height:30px;
+	width:60px;
+	}
+.header ul li a{
+	text-decoration:none;
+	color:#000000;
+	}
+.contentBox{
+	width:1000px;
+	margin:0 auto;
+	}
+.contentBox .nav-info{
+	width:100%;
+	height:70px;
+	position:relative;
+	}
+.contentBox .nav-info .navinfoimg{
+	position:absolute;
+	bottom:0;
+	right:0;
+	width:360px;
+	height:45px;
+	background:url(../images/procedure.png) 0 -468px no-repeat;
+	}
+.contentBox .nav-info .paycheck{ background-position: 0 -524px}
+.contentBox .nav-info .payresult{ background-position: 0 -587px}
+.contentBox form.ebank-form{
+	position:relative;
+	width:100%;
+	border-left:solid 1px #e6e6e6;
+	border-right:solid 1px #e6e6e6;
+	border-top:solid 1px #e6e6e6;
+	border-bottom:solid 2px #e4ded5;
+	}
+.contentBox .messagebox{
+	width: 762px;
+	height: 145px;
+	margin: 20px 0 0;
+	padding-left:230px;
+	background-image: url(../images/shoppingcarbg.png);
+	border: solid 4px #ccdee5;
+	background-color: #fafffa;
+	background-repeat: no-repeat;
+	background-position: 35px 0px;
+	}
+.contentBox .messagebox p.pay-info-title{
+	padding:15px 0 10px;
+	font-size:20px;
+	font-family:"微软雅黑";
+	font-weight:bold;
+	color:#383838;
+	}
+.contentBox .messagebox p.pay-info-title span.font_g{color:#6eaa4b; padding-left:10px;}
+.textbg{ width:470px; height:45px; padding:15px 25px; background:url(../images/textbg.png) 0 0 repeat-x #fff; border-left:1px solid #e1e5e1;border-right:1px solid #e1e5e1;border-bottom:1px solid #e1e5e1;}
+.textbg p{	font-size:12px;font-family:"宋体"; line-height:22px;}
+.textbg p.font_c{color:#858585;}
+.order-num{
+	color:#959595;
+	font-size:14px;
+	font-family:"宋体";
+	}
+.pay-num-color{
+	color:#ff0000;
+	}
+.pay-num{
+	font-family:Arial;
+	font-size:18px;
+	}
+.contentBox .ebanktitle{
+	position:absolute;
+	left:-1px;
+	top:-33px;
+	text-align:center;
+	font-size:14px;
+	height: 32px;
+    line-height: 32px;
+    padding: 0 24px;
+	background-color:#fd9518; border-top:1px solid #fd9518; border-right:1px solid #fd9518;color:#fff; font-weight:bold;
+	}
+.contentBox .quick-payment{
+	width: 100%;
+	height: 75px;
+	background: #f7f7f7;
+	border-bottom:dashed 1px #e3ddd4;
+	background-repeat:no-repeat;
+	background-position:-30px 14px;
+	line-height:75px;
+	}
+.contentBox .quick-payment label{padding: 0 16px 0 27px; color:#4d4d4d; font-size:14px;}	
+.contentBox .quick-payment .bank{
+	height:35px;
+	width:190px;
+	display:inline-block;
+	vertical-align:middle;
+	border: 1px solid #DDDDDD;
+	background:#fff;
+	}
+.contentBox .quick-payment .curbank{
+	border:solid 1px #f9c477;
+	}	
+.contentBox .quick-payment .other-bank{
+	vertical-align:middle;
+	margin:0 0 0 50px;
+	display:inline-block;
+	height:40px;
+	width:95px;
+	background:url(../images/otherbankicon.png) 1px -2px no-repeat;
+	}
+.contentBox .bank-title{
+	padding:20px;
+	}
+.contentBox .online-banks{
+	margin:20px 40px 50px;;
+	list-style:none;
+	overflow:hidden;
+	}
+.contentBox .online-banks li{
+	float:left;
+	width:225px;
+	height:35px;
+	margin:0 0 20px 0;
+	}
+.contentBox .online-banks li input{
+	margin:0 10px 0 10px;
+	}
+.contentBox .online-banks li a{
+	height:35px;
+	width:190px;
+	display:inline-block;
+	border:solid 1px #dddddd;
+	vertical-align:middle;
+	}
+.contentBox .online-banks li a.curbank{
+	height:35px;
+	width:190px;
+	display:inline-block;
+	border:solid 1px #f9c477;
+	vertical-align:middle;
+	}
+.contentBox .paybtnbox{
+	border-top:dotted 2px #e4ded5;
+	height:70px;
+	width:100%;
+	background:#fdf6ec;
+	}
+.contentBox .paybtnbox a{
+	display:block;
+	margin:20px 0 0 20px;
+	height:40px;
+	width:120px;
+	}
+.contentBox .paybtnbox a img{
+	border:none;
+	}
+.footer{
+	width:1000px;
+	height:50px;
+	background:url(../images/footerline.png) 1px -9px no-repeat;
+	background-color:#fff;
+	margin:200px auto 0;
+	line-height:50px;
+	text-align:center;
+	font-size:12px;
+	color:#919191;
+	}
+/*other banks*/
+.more-banks-box{
+	padding:5px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#40000000, endColorstr=#40000000);
+	background: rgba(0,0,0,0.4);
+	position:absolute;
+	top:445px;
+	left:50%;
+	margin-left:-367px;
+	width:735px;
+	font-family:"宋体";
+	display:none;
+	}
+.more-banks-box .more-banks{
+	background:#fff;
+	width:100%;
+	}
+.more-banks-box .more-banks .more-banks-title{
+	font-size:12px;
+	height:30px;
+	line-height:30px;
+	padding:0 5px 0;
+	border-bottom:solid 1px #e5e5e5;
+	position:relative;
+	}
+.more-banks-box .more-banks .more-banks-title a{
+	display:block;
+	position:absolute;
+	right:5px;
+	top:1px;
+	color:#2f58a9;
+	text-decoration:none;
+	}
+.more-banks-box .more-banks ul{
+	margin:20px 15px 20px;;
+	list-style:none;
+	overflow:hidden;
+	}
+.more-banks-box .more-banks ul li{
+	float:left;
+	width:225px;
+	height:35px;
+	margin:0 0 20px 0;
+	}
+.more-banks-box .more-banks ul input{
+	margin:0 10px 0 10px;
+	}
+.more-banks-box .more-banks ul li a{
+	height:35px;
+	width:190px;
+	display:inline-block;
+	border:solid 1px #dddddd;
+	vertical-align:middle;
+	}
+ .more-banks-box .more-banks ul li a.curbank{
+	height:35px;
+	width:190px;
+	display:inline-block;
+	border:solid 1px #f9c477;
+	vertical-align:middle;
+	}
+
+.more-banks-box .more-banks .more-bank-btn{
+	height:55px;
+	width:100%;
+	background:#fdf6ec;
+	border-top:dashed 1px #e0e0e0;
+	}
+.more-banks-box .more-banks .more-bank-btn a{
+	display:block;
+	margin:6px 0 0 20px;
+	height:39px;
+	width:123px;
+	}
+.more-banks-box .more-banks .more-bank-btn a img{
+	border:none;
+	}
+/*确认支付*/
+.contentBox .sure-pay{
+	border:solid 3px #ffc988;
+	width:940px;
+	margin:35px 0 0;
+	background:#fdf6ec;
+	font-size:12px;
+	font-family:"宋体";
+	padding:20px 30px 15px;
+	}
+.contentBox .sure-pay .curbank{
+	height:35px;
+	width:190px;
+	display:inline-block;
+	border:solid 1px #f9c477;
+	vertical-align:middle;
+	background:#fff;
+	}
+.contentBox .sure-pay h2{
+	font-size:12px;
+	font-weight:normal;
+	margin:10px 0;
+	}
+.contentBox .sure-pay p{
+	margin:10px 0 30px;
+	}
+.contentBox .sure-pay p .modifybank{
+	text-decoration:none;
+	color:#2f58a9;
+	display:inline-block;
+	margin:0 0 0 20px;
+	}
+.paynow_btn{
+    background:url(../images/paynow.png) 0 0 no-repeat;width:120px; height:41px;border:none; margin-top:20px; cursor:pointer;
+	}
+.contentBox .sure-pay .paynow img{
+	border:none;
+	}
+.checkbg{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#30000000, endColorstr=#30000000);
+	background: rgba(0,0,0,0.3);
+	display:none;
+	}
+.checkbg .checkbox{
+	width:335px;
+	height:170px;
+	position:fixed;
+	padding:5px;
+	left:50%;
+	top:50%;
+	margin-left:-167px;
+	margin-top:-85px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#40000000, endColorstr=#40000000);
+	background-color:#949494;
+	}
+.checkbg .checkbox .checkmessage{
+	background:#fff;
+	width:100%;
+	height:145px;
+	padding:25px 0 0;
+	}
+.checkbg .checkbox .checkmessage h2{
+	background:url(../images/checkmessageicon.png) 1px 8px no-repeat;
+	height:40px;
+	width:135px;
+	line-height:40px;
+	margin:0 auto;
+	padding:0 0 0 40px;
+	font-size:12px;
+	font-weight:normal;
+	}
+.checkbg .checkbox .checkmessage .pay-completed{
+	margin:20px 0 0;
+	text-align:center;
+	}
+.checkbg .checkbox .checkmessage .pay-completed a{
+	display:inline-block;
+	height:33px;
+	width:111px;
+	background:url(../images/back_pay_btn.png) 0 0 no-repeat;
+	text-decoration:none;
+	color:#fff;
+	font-size:12px;
+	text-align:center;
+	line-height:30px;
+	margin-left:10px;
+	}
+.checkbg .checkbox .checkmessage .backtopay{
+	display:block;
+	text-decoration:none;
+	color:#0051a4;
+	font-size:12px;
+	margin:30px 0 0 10px;
+	}
+/*支付结果*/
+.contentBox .payreslut{
+	background:#fafffa;
+	width:992px;
+	border:solid 4px #ccdee5;
+	margin:20px 0 500px;
+	background:url(../images/payresultbg.png) 55px 0px no-repeat #FAFFFA;;
+	}
+.contentBox .payreslut .pay-detail{
+	width:420px;
+	margin:110px 0 50px 195px;
+	}
+.contentBox .payreslut .pay-detail h2{
+	font-size:12px;
+	font-weight:normal;
+	}
+.contentBox .payreslut .pay-detail .pay-data{
+	margin:10px 0 25px;
+	padding:10px;
+	font-size:12px;
+	background:#fff;
+	border-top:solid 2px #6eaa4b;
+	border-bottom:solid 1px #e1e5e1;
+	border-left:solid 1px #e1e5e1;
+	border-right:solid 1px #e1e5e1;
+	}
+.contentBox .payreslut .pay-detail .pay-data p{
+	margin:10px 0;
+	}
+.contentBox .payreslut .pay-detail .otherlink{
+	font-size:12px;
+	}
+.contentBox .payreslut .pay-detail .otherlink a{
+	text-decoration:none;
+	color:#0051a4;
+	}
+
+/*banks icon*/
+/*中国农业银行*/
+#abc{
+	background-image:url(../images/bankicons.png);
+	background-position:1px 2px;
+	background-repeat:no-repeat;
+	}
+/*中国工商银行*/
+#icbc{
+	background-image:url(../images/bankicons.png);
+	background-position:-199px 2px;
+	background-repeat:no-repeat;
+	}
+/*中国建设银行*/
+#ccb{
+	background-image:url(../images/bankicons.png);
+	background-position:-395px 2px;
+	background-repeat:no-repeat;
+	}
+/*中国邮政储蓄银行*/
+#psbc{
+	background-image:url(../images/bankicons.png);
+	background-position:1px -40px;
+	background-repeat:no-repeat;
+	}
+/*中国银行*/
+#boc{
+	background-image:url(../images/bankicons.png);
+	background-position:-199px -39px;
+	background-repeat:no-repeat;
+	}
+/*中国招商银行*/
+#cmb{
+	background-image:url(../images/bankicons.png);
+	background-position:-402px -39px;
+	background-repeat:no-repeat;
+	}
+/*交通银行*/
+#bcm{
+	background-image:url(../images/bankicons.png);
+	background-position:1px -84px;
+	background-repeat:no-repeat;
+	}
+/*浦发银行*/
+#spdb{
+	background-image:url(../images/bankicons.png);
+	background-position:-194px -84px;
+	background-repeat:no-repeat;
+	}
+/*中国光大银行*/
+#ceb{
+	background-image:url(../images/bankicons.png);
+	background-position:-392px -84px;
+	background-repeat:no-repeat;
+	}
+/*中信银行*/
+#citic{
+	background-image:url(../images/bankicons.png);
+	background-position:1px -121px;
+	background-repeat:no-repeat;
+	}
+/*平安银行*/
+#pingan{
+	background-image:url(../images/bankicons.png);
+	background-position:-195px -122px;
+	background-repeat:no-repeat;
+	}
+/*中国民生银行*/
+#cmbc{
+	background-image:url(../images/bankicons.png);
+	background-position:-392px -122px;
+	background-repeat:no-repeat;
+	}
+/*深圳发展银行*/
+#cbhb{
+	background-image:url(../images/bankicons.png);
+	background-position:6px -162px;
+	background-repeat:no-repeat;
+	}
+/*华夏银行*/
+#hxb{
+	background-image:url(../images/bankicons.png);
+	background-position:-197px -162px;
+	background-repeat:no-repeat;
+	}
+/*广发银行*/
+#gdb{
+	background-image:url(../images/bankicons.png);
+	background-position:-392px -162px;
+	background-repeat:no-repeat;
+	}
+/*上海银行*/
+#bankofshanghai{
+	background-image:url(../images/bankicons.png);
+	background-position:1px -205px;
+	background-repeat:no-repeat;
+	}
+/*北京银行*/
+#bob{
+	background-image:url(../images/bankicons.png);
+	background-position:-191px -205px;
+	background-repeat:no-repeat;
+	}
+/*杭州银行*/
+#hzb{
+	background-image:url(../images/bankicons.png);
+	background-position:-392px -205px;
+	background-repeat:no-repeat;
+	}
+/*兴业银行*/
+#cib{
+	background-image:url(../images/bankicons.png);
+	background-position:1px -245px;
+	background-repeat:no-repeat;
+}
+/*北京农商*/
+#bjrcb{
+	background-image:url(../images/bankicons.png);
+	background-position:-392px -245px;
+	background-repeat:no-repeat;
+}
+/*南京银行*/
+#njcb{
+	background-image:url(../images/bankicons.png);
+	background-position:-191px -245px;
+	background-repeat:no-repeat;
+}
+/*浙商银行*/
+#czb{
+	background-image:url(../images/bankicons.png);
+	background-position:1px -285px;
+	background-repeat:no-repeat;
+}
+.pay_account_tab{margin-top:28px; overflow:hidden; zoom:1;}
+.pay_account_tab ul li{ height:32px; line-height:32px;padding:0 24px; border-top:1px solid #dadada; border-right:1px solid #dadada;float:left; font-size:14px;}
+.pay_account_tab ul li.bl{border-left:1px solid #dadada; }
+.pay_account_tab ul li.nor{border-right:none;}
+.pay_account_tab ul li.pay_account_currentli{background-color:#fd9518; border-top:1px solid #fd9518; border-right:1px solid #fd9518; color:#fff; font-weight:bold;}
+.pay_account_box{border:1px solid #e6e6e6; overflow:hidden;zoom:1; margin-bottom:440px;}
+.pay_b{line-height:46px; background:url(../images/warning_blue.png) 15px 15px no-repeat #fdf6ec; border-bottom:1px dashed #dad6cf; padding-left:42px;}
+.pay_b span{ font-size:18px; font-weight:bold;color:#fd9518;}
+
+.pay_in{padding:50px 0 0 0; line-height:32px;}
+.pay_in p{padding-left:40px;}
+.pay_in p input{height:22px; border-top:1px solid #696969; border-left:1px solid #696969; border-right:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;}
+.pay_w{line-height:38px; font-size:16px; font-family:"微软雅黑";color:#000; padding-bottom:50px;}
+.pay_w a,.pay_in p a{color:#0051a4;padding:0 5px;}
+.pay_w span{color:#f00;}
+.pay_w label{float:left;}
+.pay_w a.open_pwd{display:inline-block;}
+.ft_grey{color:#989898; padding-left:55px;}
+.pay_btn{height:39px; background-color:#fdf6ec; padding:16px 0 16px 26px;border-top: 2px dotted #E4DED5; margin-top:40px;}
+.pay_in p input.pay_account_btn{ background:url(../images/paybtn.png) 0 0 no-repeat; width:121px; height:39px; border:none; cursor:pointer; text-indent:9999em;}
+.pay_platform {padding: 35px 45px 35px;overflow: hidden; border-bottom:1px dashed #dbdbdb;}
+.pay_platform li{float:left;height: 41px;width: 225px;}
+.pay_platform li input{ margin: 0 10px;}
+.pay_platform li a {border: 1px solid #DDDDDD;display: inline-block;height: 39px;vertical-align: middle;width: 185px;}
+#alipay{background-image:url(../images/pay_platform_icons.png);background-position:0px 0px;background-repeat:no-repeat;}
+#tenpay{background-image:url(../images/pay_platform_icons.png);background-position:0px -40px;background-repeat:no-repeat;}
+#bill{background-image:url(../images/pay_platform_icons.png);background-position:0px -80px;background-repeat:no-repeat;}
+#unionpay{background-image:url(../images/pay_platform_icons.png);background-position:0px -120px;background-repeat:no-repeat;}
+.platform_info{padding:55px 120px 112px 40px }
+.platform_info h3{ font-size:14px; line-height:26px;}
+.platform_info p{padding-left:20px; text-indent:1em; line-height:20px;}
+.tenpay_info,.bill_info,.unionpay_info{display:none;}
+.pay_platform_btn{ background:url(../images/more-banks-btn.png) 0 0 no-repeat; width:123px; height:39px; border:none; cursor:pointer;}
+.paytopbox{width:100%; background:url(../images/top_bg.png) 0 0 repeat-x;}
+.paytop{width:1000px; height:30px; margin:0 auto;}
+.paytop a{float:right; display:inline-block; line-height:30px; color:#000; font-size:12px;  padding:0 10px;}
+.paytop a.quit{padding-right:10px; color:#0051a4;}

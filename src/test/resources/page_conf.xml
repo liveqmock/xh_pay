@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<page id="test" uri="/index">
+		<window id="testwindow1">
+			<property name="sql" value="select * from t_an_unique_new where newsid>100" />
+		</window>
+		<window id="testwindow2">
+			<property name="sql" value="select * from t_an_unique_new where newsid&lt;200" />
+		</window>
+	</page>
+</configuration>

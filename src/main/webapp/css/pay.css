@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{background-color:#ffff; font-family:"宋体";}
+button,input{border:none;margin:0; padding:0;}
+.paytopbox{width:100%; background:url(../images/top_bg.png) 0 0 repeat-x;}
+.paytop{width:1000px; height:30px; margin:0 auto;}
+.paytop a{float:right; display:inline-block; line-height:30px; color:#000; font-size:12px;  padding:0 10px;}
+.paytop a.quit{padding-right:10px; color:#0051a4;}
+.paylogo{width:1000px; height:74px; margin:0 auto;}
+.paynavbox{width:100%;  background:url(../images/pay_nav_bg.png) 0 0 repeat-x;}
+.paynav{ width:1000px; padding-top:8px;height:35px;  margin:0 auto;}
+.paynav ul{padding-left:5px; overflow:hidden;zoom:1;}
+.paynav ul li{float:left; height:34px; line-height:34px; padding:0 20px; margin-right:12px;  font-size:14px; font-weight:bold; }
+.paynav ul li a{color:#fffefe;}
+.paynav ul li.currentli{ background-color:#fff; border-bottom:1px solid #fef5ea;}
+.paynav ul li.currentli a{ color:#686868;}
+.paycontent,paynav2_content{width:1000px; margin:0 auto;}
+.paynavbox_tab,.dn{display:none;}
+.tabdiv_current,.db{display:block;}
+.account_balance_box{border-bottom:2px solid #cd7f00; height:31px; line-height:31px; padding-top:38px; color:#0051a4;}
+.cur_account_balance{ background-color:#cd6a00;;height:31px; line-height:31px; display:inline-block; float:left;color:#fff; font-weight:bold; font-size:14px; text-align:center; padding:0 18px;}
+.balance_box{padding:5px 0; border-bottom:1px solid #dadada;overflow:hidden; zoom:1;}
+.cash_balance{width:469px; float:left; padding:20px 10px 20px 20px; line-height:28px;}
+.cash_balance p{ line-height:32px;}
+.cash_balance span{color:#696969; font-weight:bold;}
+.cash_balance span.spacectr{margin-left: 30px;}
+.cash_balance span.ft24{font-size:24px;color:#ff8100; padding:0 0px;}
+.bor{border-right:1px dashed #dadada;}
+.pay_img{width:61px; height:56px; padding:3px; border:1px solid #dadada;float:left; margin-right:10px;}
+.fr{float:right;}
+.fl{float:left;}
+
+.recharge_btn{ margin-top:15px;background:url(../images/recharge_bg.png) 0 0 no-repeat; width:99px; height:35px; text-align:center; line-height:35px; float:right; font-family:"微软雅黑"; color:#fff; font-weight:bold; letter-spacing:5px; cursor:pointer;}
+.ex_bg{ background:url(../images/exchange_bg.png) 0 0 no-repeat; color:#a1a1a1;}
+#recordbox1 ul li,#recordbox2 ul li{float:left;}
+#recordbox1 ul li a,#recordbox2 ul li a{padding:8px 18px;}
+#recordbox1 ul li.cur_account_balance a:hover,#recordbox2 ul li.cur_account_balance a:hover{ color:#fff;}
+
+.srh_date{padding:20px 0 15px 0; border-bottom:1px dashed #dadada; overflow:hidden; zoom:1;}
+.start_end_srh{float:right; margin-right:5px;}
+.srh_date label{ float:left; vertical-align:middle; line-height:25px; margin-left:5px;padding-right:15px; color:#000;}
+.srh_date label.label_to{color:#c1c1c1; padding-right:5px; display:inline-block;}
+.srh_date input{float:left;vertical-align:middle; background:url(../images/datetxt_bg.png) 0 0 no-repeat; width:150px; height:25px; text-indent:0.5em;}
+.srh_btn{ background:url(../images/search_bg.png) 0 0 no-repeat; width:26px; height:25px; cursor:pointer; margin-left:10px;}
+.srh_condition{padding:35px 0 0 5px ; overflow:hidden;zoom:1;}
+.funds_flow_box,.funds_range_box{ overflow:hidden;zoom:1; height:40px;}
+.srh_condition  label{float:left; padding-right:15px;}
+.funds_flow { overflow:hidden;zoom:1; height:19px;}
+.funds_flow li{float:left; margin:0 10px; height:100%;}
+.funds_flow li a { height:19px;float:left; display:block;color:#000; padding-left:8px;}
+.funds_flow li a span { height:19px;  line-height:19px;float:left; display:block; padding-right:8px;}
+.funds_flow li a:hover {background:url(../images/cur_bg.png) 0 0 no-repeat; color:#fff;}
+.funds_flow li a:hover span  {background:url(../images/cur_bg.png) right 0 no-repeat; cursor:pointer;}
+.funds_flow li.funds_currentli a {background:url(../images/cur_bg.png) left 0 no-repeat; color:#fff; position:relative;}
+.funds_flow li.funds_currentli a span {background:url(../images/cur_bg.png) right 0 no-repeat;  position:relative;}
+
+.record_tb{width:100%; margin-top:25px;}
+.record_tb tr{border-bottom:1px solid #dadada;}
+.record_tb tr th{height:36px;  text-align:center; background-color:#e8eff6; color:#353535; font-weight:bold;}
+.record_tb tr td{height:40px;text-align:center; color:#000;}
+.record_tb tr td.td_time{color:#797979;}
+.record_tb tr td.totalcount{height:26px; text-align:right; padding-right:10px;}
+.record_tb tr td.totalcount a{color:#0051a4;}
+.record_tb tr td.operation_failed{color:#f00;}
+.record_tb tr td.add_m{font-size:16px; font-weight:bold; color:#1f9e16;}
+.record_tb tr td.reduce_m{font-size:16px; font-weight:bold; color:#f47900;}
+.record_tb tr td.wait_pay{font-size:16px; font-weight:bold; color:#817f7f;}
+.record_tb tr td.tl,.record_tb tr th.tl{ text-align:left;padding-left:60px;}
+.record_tb tr td span.out_count{font-size:14px; color:#f48b00; font-weight:bold;}
+.record_tb tr td span.in_count{font-size:14px; color:#53a000; font-weight:bold;}
+.page_go_to{width:26px; height:19px; border:1px solid #dadada; margin-top:5px;}
+.page_srh_btn{ background:url(../images/page_srh.png) 0 0 no-repeat; width:21px; height:21px; cursor:pointer;}
+.record_tb tr td label{ vertical-align:middle;}
+.pay_questions{width:1000px; margin:0 auto;}
+.normal_questions{border-bottom:2px solid #cd7f00; padding-top:40px; height:35px; line-height:35px; font-size:14px; font-weight:bold; padding-left:5px;}
+.normal_questions_ul{padding:40px 45px 0 65px; overflow:hidden;}
+.normal_questions_ul li{padding:10px 0; border-bottom:1px dashed #dadada; line-height:26px;}
+.normal_questions_ul li h3,.normal_questions_ul li a{color:#0051a4;}
+.more_questions{ text-align:right; height:60px; line-height:60px; color:#0051a4;padding-right:45px;}
+.paybottom{background:url(../images/pay_bottom_bg.png) 0 0 no-repeat; width:1000px; height:50px; line-height:50px; text-align:center;margin:200px auto 0; }
+.footer{width:1000px;height:50px;background:url(../images/footerline.png) 1px -9px no-repeat;background-color:#fff;margin:200px auto 0;line-height:50px;text-align:center;font-size:12px;color:#919191;}
+.paylogo ul{float:right;}
+.paylogo ul li{float:left;}
+.pay_success_info{border:4px solid #ccdee5; background:url(../images/shopping_cart_icon.png) 0 0 no-repeat; padding-left:200px; height:147px;}
+.pay_success_h2{ font-size:20px; font-weight:bold; color:#010101; line-height:46px;}
+.pay_success_info p{line-height:28px;}
+.pay_success_info p span{color:#959595; font-size:14px;}
+.pay_success_info p em{ font-size:16px; font-weight:bold; color:#f00;}
+.pay_success_info p em.ft_normal{font-weight:normal; font-size:14px;}
+
+.calendar-input-wrap{float:left;}
+.cash_balance p.no_bond{color:#6dbb52; font-size:16px; font-family:"微软雅黑"; font-weight:bold;}
+.recharge_messagebox{width:998px; border:1px solid #edd28b; background-color:#fffdee; margin-top:25px; padding-bottom:10px;}
+.recharge_messagebox p{line-height:46px;}
+.recharge_messagebox p label{padding-left:33px; font-size:14px;}
+.recharge_messagebox p span{color:#ff8400; font-size:14px;}
+.recharge_messagebox p.pay_b{line-height:46px;background:url(../images/warning_blue.png) 15px 15px no-repeat; border-bottom:1px dashed #dad6cf; padding-left:42px;  margin-bottom:20px;}
+.recharge_messagebox p.pay_b span{ font-size:18px; font-weight:bold;color:#fd9518;}
+.recharge_messagebox p .recharge_amount_input{width:136px; height:36px;border:1px solid #cccabe;}
+.recharge_messagebox p em{font-size:14px;}
+.recharge_messagebox p.pd80{padding-left:100px; color:#a9a9a9; line-height:20px; margin-bottom:20px;}
+.tips{padding:20px 0  20px 40px; border:1px solid #e6e6e6; margin-top:30px; position:relative;}
+.tips h3{position:absolute; top:-10px; left:20px; color:#1d1d1d; font-size:14px; font-weight:bold; background-color:#fff; width:76px; text-align:center;}
+.tips ul li{line-height:22px;}
+.messagebox{	width: 842px;height: 83px;margin: 20px 0 0;	padding-left:150px;	padding-top:62px;	border: solid 4px #ccdee5;	background:url(../images/warning_repeat.png) 90px 50px no-repeat #fafffa; font-size:18px; font-family:"微软雅黑"; color:#303030;	}
+
+
+
+.checkbg-de{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#30000000, endColorstr=#30000000);
+	background: rgba(0,0,0,0.3);
+	display:none;
+	}
+.checkbg-de .checkbox-de{
+	width:575px;
+	position:fixed;
+	padding:5px;
+	left:50%;
+	top:50%;
+	margin-left:-245px;
+	margin-top:-125px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#40000000, endColorstr=#40000000);
+	background-color:#949494;
+	}
+.checkbg-de .checkbox-de .checkmessage{
+	background:#fff;
+	width:100%;
+	padding:25px 0 0;
+	}
+.checkmessage  .de-error{ margin: 0 auto; width:340px; height:70px; margin-top:60px;padding-bottom: 100px;}
+.checkmessage .de-img{ display:inline-block; width:114px; height:70px; background:url(../images/d-error.png) no-repeat; vertical-align:middle;}
+.checkmessage .de-miaoshu{ display:inline-block; font-family:微软雅黑; font-size:14px; line-height:70px; height:70px;margin-left:20px; color:#545454;}
+.checkbg-de .checkbox-de .close-de{ position:absolute; display:block; width:22px; height:22px; top:0px; right:0px; background:url(../images/d-close.png) no-repeat;}
+.checkmessage table{width:100%;}
+.checkmessage table tr td{border:1px solid #cbcbcb; height:44px; text-align:center; background-color:#f6f6f6;}
+.checkmessage table tr td.pdr20{padding-right:20px; text-align:right;}
+.checkmessage table tr td.tdbg{border-bottom:1px solid #e5e5e5; background-color:#fff;}

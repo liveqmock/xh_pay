@@ -1,0 +1,27 @@
+
+/* Modules:= 消息提示,右侧 {{{ */
+.validator-side{position:absolute;top:0;left:0; height:25px; display: none; z-index:9999; font-size:12px;}
+.validator-side .estate{line-height:28px; float:left; height:28px;	padding-left:28px;background:url(../images/warn-side-icon.gif) 0 0 no-repeat #fff;}
+.validator-side .label{display:block; padding:0 5px; height:26px; line-height:26px; border:1px solid #5DBFFF; border-left:none; overflow:hidden}
+.validator-side .tip{background-position:0 0;}
+.validator-side .tip .label{border-color:#5DBFFF;background-color:#E5F5FF}
+.validator-side .error{background-position:0px -28px;}
+.validator-side .error .label{border-color:#FF8080;background-color:#FFF2F2}
+.validator-side .ok{background-position:0px -56px;}
+.validator-side .ok .label{border-color:#6BC52F;background-color:#F0FFE5}
+/* }}} */
+
+/* Modules:= 消息提示,上侧 {{{ */
+.validator-top{position:absolute; top:0;left:0; height:34px; display: none; z-index:99999; font-size:12px;}
+.validator-top .estate{float:left; height:34px; display: inline;}
+.validator-top .label{float:left; padding:0 5px; height:26px; line-height:26px; border:1px solid #5DBFFF; border-left:none; }
+.tip-icon, .error-icon, .ok-icon{background:url(../images/warn-top-icon.gif) no-repeat; float:left; height:34px; width:27px; display:block}
+.validator-top .tip-icon{background-position:0 0;}
+.validator-top .tip .label{border-color:#5DBFFF;background-color:#E5F5FF}
+.validator-top .error-icon{background-position:-27px 0;}
+.validator-top .error .label{border-color:#FF8080;background-color:#FFF2F2}
+.validator-top .ok-icon{background-position:-54px 0;}
+.validator-top .ok .label{border-color:#6BC52F;background-color:#F0FFE5}
+/* }}} */
+
+
