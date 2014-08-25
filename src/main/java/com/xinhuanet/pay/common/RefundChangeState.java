@@ -54,4 +54,46 @@ public class RefundChangeState {
 	 * 1- 被动发起退款，由管理进行退款操作
 	 */
 	public static final int APPLY_PASSIVE = 1;
+	
+	/**
+	 * 转换代码到名称
+	 * @param status
+	 * @return
+	 */
+	public static String convertStatus(int status){
+		String statusName = "";
+		if(REFUND_APPLY == status){
+			statusName = "退款申请";
+		}else if(REFUND_UNDO == status){
+			statusName = "撤销退款申请";
+		}else if(REFUND_REFUSE == status){
+			statusName = "拒绝退款";
+		}else if(REFUND_AGREE == status){
+			statusName = "同意退款";
+		}else if(REFUND_COMPLETE == status){
+			statusName = "处理完成";
+		}else{
+			statusName = "没有改状态";
+		}
+		return statusName;
+	}
+	
+	/**
+	 * 步骤代码转名称
+	 * @param step
+	 * @return
+	 */
+	public static String convertStep(int step){
+		String stepName = "";
+		if(ROLE_USER == step){
+			stepName = "用户申请";
+		}else if(ROLE_APP_MANAGER == step){
+			stepName = "应用管理员审核";
+		}else if(ROLE_FINANCIAL == step){
+			stepName = "财务管理员审核";
+		}else {
+			stepName = "没有改步骤";
+		}
+		return stepName;
+	}
 }

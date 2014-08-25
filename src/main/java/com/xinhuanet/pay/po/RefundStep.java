@@ -46,6 +46,18 @@ public class RefundStep implements Serializable{
 	 * 管理员
 	 */
 	private String admin;
+	/**
+	 * 状态名
+	 */
+	private String statusName;
+	/**
+	 * 步骤名
+	 */
+	private String stepName;
+	/**
+	 * 字符串格式的日期
+	 */
+	private String formateDate;
 	public Integer getId() {
 		return id;
 	}
@@ -94,12 +106,31 @@ public class RefundStep implements Serializable{
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
+	public String getStatusName() {
+		return statusName;
+	}
+	public void setStatusName(String statusName) {
+		this.statusName = statusName;
+	}
+	public String getStepName() {
+		return stepName;
+	}
+	public void setStepName(String stepName) {
+		this.stepName = stepName;
+	}
+	public String getFormateDate() {
+		return formateDate;
+	}
+	public void setFormateDate(String formateDate) {
+		this.formateDate = formateDate;
+	}
 	@Override
 	public String toString() {
 		return "RefundStep [id=" + id + ", orderId=" + orderId + ", reason="
 				+ reason + ", step=" + step + ", status=" + status
 				+ ", handleTime=" + handleTime + ", ipAddress=" + ipAddress
-				+ ", admin=" + admin + "]";
+				+ ", admin=" + admin + ", statusName=" + statusName
+				+ ", stepName=" + stepName + ", formateDate=" + formateDate
+				+ "]";
 	}
-	
 }

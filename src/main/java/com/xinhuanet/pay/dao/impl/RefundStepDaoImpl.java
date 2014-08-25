@@ -49,7 +49,7 @@ public class RefundStepDaoImpl extends BaseDAO implements RefundStepDao {
 
 	@Override
 	public List<RefundStep> getList(String orderId) {
-		String sql = "select * from pay_refund_step where orderid=?";
+		String sql = "select * from pay_refund_step where orderid=? order by handleTime desc";
 		Object[] params = new Object[] {
 				orderId
 			};

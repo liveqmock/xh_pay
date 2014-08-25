@@ -18,6 +18,7 @@ import com.xinhuanet.pay.common.Constants;
 import com.xinhuanet.pay.common.PageRollModel;
 import com.xinhuanet.pay.po.Account;
 import com.xinhuanet.pay.po.PayDetail;
+import com.xinhuanet.pay.po.PayDetailAndRefundApply;
 import com.xinhuanet.pay.po.SysConfig;
 import com.xinhuanet.pay.service.PayDetailService;
 import com.xinhuanet.pay.service.SysConfigService;
@@ -74,7 +75,8 @@ public class AccountController extends BaseController{
 		pageModel.setCurrentPage(Integer.parseInt(page));
 		pageModel.setTotalCount(totalCount);
 		pageModel.setPageCount(5);
-		List<PayDetail> list = payGadgetService.getDetailList(uid,pageModel);
+		//List<PayDetail> list = payGadgetService.getDetailList(uid,pageModel);
+		List<PayDetailAndRefundApply> list = payGadgetService.getDetailListAndRefundApply(uid,pageModel);
 		
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("gadgetlist", list);

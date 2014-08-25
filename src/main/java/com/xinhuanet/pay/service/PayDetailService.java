@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.xinhuanet.pay.common.PageRollModel;
 import com.xinhuanet.pay.po.PayDetail;
+import com.xinhuanet.pay.po.PayDetailAndRefundApply;
 
 public interface PayDetailService {
 	/**
@@ -30,4 +31,11 @@ public interface PayDetailService {
 	 * @return
 	 */
 	public PayDetail get(int id);
+	/**
+	 * 获取订单明细与退款明细信息
+	 * @param uid
+	 * @param pageModel
+	 * @return
+	 */
+	public List<PayDetailAndRefundApply> getDetailListAndRefundApply(String uid, PageRollModel pageModel);
 }

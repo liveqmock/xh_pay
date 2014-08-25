@@ -90,7 +90,7 @@
                         <th width="20%">用途</th>
                         <th width="15%">金额</th>
                         <th>操作</th>
-                        <th>退款申请</th>
+                        <th>退款信息</th>
                     </tr>
 
 					<c:forEach var="gadgets" items="${gadgetlist}" varStatus="i">
@@ -107,12 +107,27 @@
 	                        </c:if>
 	                        <%-- 操作失败 <td class="wait_pay">+50</td> --%>
 	                        <td><a class="xiangqing" id="${gadgets.id }">详情</a></td>
+	                        <!-- 当gadgets.canRefund == 1在退款时间范围内，否则不在退款时间范围内-->
 							<c:choose>
-								<c:when test="${gadgets.orderType == 1 }">
-									<td title="已申请">退款申请</td>
+								<c:when test="${gadgets.canRefund == 1 }">
+									<c:choose>
+										<c:when test="${gadgets.refundStatus == 0 or gadgets.refundStatus == 2 or gadgets.refundStatus == 3}">
+											<td><a class="refund" id="${gadgets.id }" href="<c:url value="/user/refund/apply.do?orderId=${gadgets.orderId }&refundMoney=${gadgets.money }" />">退款申请</a></td>
+										</c:when>
+										<c:otherwise>
+											<td><a class="refunddetail" id="${gadgets.orderId }" >退款详情</a></td>
+										</c:otherwise>
+									</c:choose>
 								</c:when>
 								<c:otherwise>
-									<td><a class="refund" id="${gadgets.id }" href="<c:url value="/user/refund/apply.do?orderId=${gadgets.orderId }&refundMoney=${gadgets.money }" />">退款申请</a></td>
+									<c:choose>
+										<c:when test="${gadgets.refundStatus == 0}">
+											<td title="不符合条件,已超过退款期限">退款申请</td>
+										</c:when>
+										<c:otherwise>
+											<td><a class="refunddetail" id="${gadgets.orderId }" >退款详情</a></td>
+										</c:otherwise>
+									</c:choose>
 								</c:otherwise>
 							</c:choose>
 						</tr>
@@ -166,6 +181,16 @@
 	        </div>    
 	    </div>
 	</div>
+	<div class="checkbg-de refundsuc">
+		<div class="checkbox-de">
+			<div class="checkmessage">
+				<a class="close-de"> </a>
+	 			<table class="refundtable">
+         
+     			</table>
+     		</div>    
+	    </div>
+	</div>
 	
  <script type="text/javascript">
     KISSY.use('', function(S) {
@@ -175,6 +200,9 @@
 		});
 		$('.close-de','.suc').on("click",function(){
 			$(".suc").hide();
+		});
+		$('.close-de','.refundsuc').on("click",function(){
+			$(".refundsuc").hide();
 		});
 		$(".xiangqing",'.record_tb').on("click", function() {
 			var docHeight=S.DOM.docHeight ();
@@ -214,6 +242,44 @@
 			    }
 			});
 		});
+		
+		
+		$(".refunddetail",'.record_tb').on("click", function() {
+			var docHeight=S.DOM.docHeight ();
+			var docWidth = S.DOM.docWidth();
+			var data={};
+			data.id=$(this).attr('id');
+			S.IO({
+				url:'<c:url value="/user/refund/step.do" />',
+			    type:"post",
+			    processData:true,
+			    data:data,
+			    dataType:'json',			
+			    success:function (d) {
+			        if(d.code===1){
+			        	$(".fail").width(docWidth);
+						$(".fail").height(docHeight);
+						console.log( $(".fail") );
+						$(".fail").show();
+						return false;
+			        }else if(d.code===0){
+			        	$(".refundtable").html("");	        	
+			        	S.each(d.refundList, function(item) {
+			        	    $(".refundtable").append("<tr><td  class='pdr20'>订单号：</td><td class='tdbg orderId' >" + item.orderId + "</td><td  class='pdr20'>操作时间：</td><td class='tdbg formateDate' > " + item.formateDate + "</td></tr>");
+			        	    $(".refundtable").append("<tr><td  class='pdr20'>状态：</td><td class='tdbg statusName' >" + item.statusName + "</td><td  class='pdr20'>步骤：</td><td class='tdbg stepName' > " + item.stepName + "</td></tr>");
+			        	    $(".refundtable").append("<tr><td  class='pdr20'>原因：</td><td class='tdbg reason' colspan='3'>" + item.reason + "</td></tr>");
+			        	});
+			        	S.log(d);
+			        	$(".refundsuc").width(docWidth);
+						$(".refundsuc").height(docHeight);
+						console.log( $(".fail") );
+						$(".refundsuc").show();
+						return false;
+			        }
+			    }
+			});
+		});		
+		
 	});
 	</script>
 	<script type="text/javascript">

@@ -8,8 +8,10 @@ import org.springframework.stereotype.Component;
 import com.xinhuanet.pay.common.BaseDAO;
 import com.xinhuanet.pay.common.PageRollModel;
 import com.xinhuanet.pay.dao.PayDetailDao;
+import com.xinhuanet.pay.mapper.PayDetailAndRefundApplyRowMapper;
 import com.xinhuanet.pay.mapper.PayDetailRowMapper;
 import com.xinhuanet.pay.po.PayDetail;
+import com.xinhuanet.pay.po.PayDetailAndRefundApply;
 import com.xinhuanet.pay.util.Function;
 
 @Component
@@ -66,5 +68,19 @@ public class PayDetailDaoImpl extends BaseDAO implements PayDetailDao {
 			};
 		List<PayDetail> list = getJdbcTemplate(READ).query(sql, params, new PayDetailRowMapper());
         return (list == null || list.size() == 0) ? null : list.get(0);
+	}
+
+	@Override
+	public List<PayDetailAndRefundApply> getDetailListAndRefundApply(
+			String uid, PageRollModel pageModel) {
+		String sql = "select a.*, b.trxid, b.refordid, b.money refundmoney, b.paytype, b.reason, b.status refundstatus, "
+				+ "b.step, b.apply, b.handleTime, b.comment "
+				+ " from pay_detail a left join pay_refund_apply b on a.orderid = b.orderid where a.uid=? order by a.addtime desc limit ?,?";
+		Object[] params = new Object[] {
+				uid,
+				pageModel.getStartIndex(),
+				pageModel.getPageCount()};
+		List<PayDetailAndRefundApply> list = getJdbcTemplate(READ).query(sql, params, new PayDetailAndRefundApplyRowMapper());
+		return list;
 	}
 }

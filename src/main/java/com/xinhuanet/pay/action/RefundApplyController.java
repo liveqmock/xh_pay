@@ -3,6 +3,7 @@ package com.xinhuanet.pay.action;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,9 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.xinhuanet.pay.common.BaseController;
 import com.xinhuanet.pay.common.RefundChangeState;
 import com.xinhuanet.pay.exception.AccountUnmatchErrorException;
@@ -24,6 +27,7 @@ import com.xinhuanet.pay.po.RefundStep;
 import com.xinhuanet.pay.service.PayOrderService;
 import com.xinhuanet.pay.service.RefundApplyService;
 import com.xinhuanet.pay.service.RefundOrderService;
+import com.xinhuanet.pay.service.RefundStepService;
 import com.xinhuanet.pay.util.Function;
 import com.xinhuanet.pay.util.HttpUtil;
 
@@ -45,6 +49,11 @@ public class RefundApplyController extends BaseController{
 	 * 订单服务
 	 */
 	private @Autowired PayOrderService payOrderService;
+	/**
+	 * 退款明细服务
+	 */
+	@Autowired
+	private RefundStepService refundStepService;
 	
 
 	/**
@@ -197,5 +206,31 @@ public class RefundApplyController extends BaseController{
 			}
 		}
 		return mav;
+	}
+	
+	/**
+	 * 退款步骤详细信息
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "/user/refund/step.do")
+	@ResponseBody
+	public String refundStepDetail(HttpServletRequest request,HttpServletResponse response) {
+		//获取账户信息
+		this.getAccount(request,response);
+		String orderId = request.getParameter("id");
+		List<RefundStep> refundSteps = refundStepService.getList(orderId);
+		JSONObject json = new JSONObject();		
+		if(0 == refundSteps.size()){
+			json.put("code", 1);
+			json.put("message", "网络存在异常，请稍候重试");
+		}else {
+			json.put("code", 0);
+			json.put("message", "成功");
+			json.put("refundList", refundSteps);
+		}
+		
+		return json.toJSONString();
 	}
 }

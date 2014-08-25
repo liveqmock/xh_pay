@@ -64,13 +64,15 @@
 	<%@ include file="/WEB-INF/views/include/footer.jsp" %>
 	<!-- 底部 end -->
 		<script type="text/javascript">
-			KISSY.use('',function(S){
-			
+			KISSY.use('',function(S){		
 				S.all('#chargeSub').on('click',function(){
-// 					var result=validator.isValid();
-// 					if(result){
-// 						S.DOM.get('#ebank-form').submit();
-// 					}
+ 					var reason = S.get('#reason').value + "0";
+ 					//alert(reason);
+ 					if(reason == 0){
+ 						alert("退款原因不能为空!");
+ 						S.get('#reason').focus();
+ 						return false;
+ 					}
 					S.DOM.get('#ebank-form').submit();
 				});
 			});
